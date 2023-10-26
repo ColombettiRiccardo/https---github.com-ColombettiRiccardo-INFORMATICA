@@ -8,6 +8,7 @@ class main():
         self.__listaClienti = []
         self.__listaUtilitaria = []
         self.__listaLusso = []
+        self.__targa = ""
 
     def inserisci_Utilitaria(self, m, c, t):
 
@@ -21,6 +22,10 @@ class main():
 
         self.__listaClienti.append(Cliente(n, c, e, np, cf))
 
+    def inserisci_targa(self, t):
+
+        self.__targa == t
+
     def nuovo_cliente(self, clienti, noleggi):
         cf = input("CF: ")
         if cf not in clienti:  # Nuovo cliente
@@ -32,7 +37,8 @@ class main():
         return cf
 
     def nuovo_noleggio(self, clienti, veicoli, noleggi):
-        targa = input("Targa: ")
+        targa = ""
+        targa == self.inserisci_targa
         if targa in veicoli:  # Il veicolo esiste
 
             for cf in noleggi:

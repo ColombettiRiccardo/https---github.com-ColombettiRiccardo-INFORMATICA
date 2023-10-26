@@ -1,5 +1,7 @@
 from tkinter import *
 from main import main
+from Veicolo import Utilitaria, Lusso
+from Cliente import Cliente
 
 
 class Cliente():
@@ -164,7 +166,18 @@ class Noleggio(Cliente, Veicolo):
         self.frame3 = Frame(parent)
         self.frame3.pack()
 
+        # TEXT TARGA -------------------------------------------------------------------------------
+
         self.label_targa_noleggio = Label(self.frame3, text="targa:")
         self.label_targa_noleggio.grid(row=0, column=0)
         self.entry_targa_noleggio = Entry(self.frame3)
         self.entry_targa_noleggio.grid(row=0, column=1)
+
+        # BUTTON -----------------------------------------------------------------------------------
+
+        self.bNuovo_Cliente = Button(self.frame3, text="Verifica",
+                                     command=self.bNuovo_Cliente)
+        self.bNuovo_Cliente.grid(column=0, row=6)
+
+    def bNuovo_Cliente(self):
+        self.att.nuovo_noleggio()
